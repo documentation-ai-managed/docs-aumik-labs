@@ -22,6 +22,14 @@
                 "group": "Data Center",
                 "pages": [
                   {
+                    "title": "Target Customer & Sales Guide",
+                    "path": "target-customer-sales-guide"
+                  },
+                  {
+                    "title": "ata Center Investment Research: Madhya Pradesh, India",
+                    "path": "ata-center-investment-research-madhya-pradesh-india"
+                  },
+                  {
                     "title": "Data Center Implementation Plan",
                     "path": "data-center-implementation-plan"
                   },
