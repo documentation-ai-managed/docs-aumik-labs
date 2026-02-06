@@ -22,6 +22,10 @@
                 "group": "Data Center",
                 "pages": [
                   {
+                    "title": "Implementation Plan",
+                    "path": "implementation-plan"
+                  },
+                  {
                     "title": "GPU Economics",
                     "path": "gpu-economics",
                     "icon": "computer"
