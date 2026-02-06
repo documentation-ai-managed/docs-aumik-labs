@@ -19,6 +19,16 @@
             "icon": "rocket",
             "pages": [
               {
+                "group": "Data Center",
+                "pages": [
+                  {
+                    "title": "GPU Economics Analysis",
+                    "path": "gpu-economics-analysis"
+                  }
+                ],
+                "icon": "database"
+              },
+              {
                 "title": "Introduction",
                 "path": "introduction",
                 "icon": "home"
