@@ -1,0 +1,100 @@
+---
+title: "GPU Economics"
+description: "Buy vs Lease vs Resell - Decision Framework"
+---
+
+## Key Insight
+
+GPU cloud has **14-16% gross margins** after depreciation, labor, and power (McKinsey). Not a high-margin business.
+
+## Current Pricing (Feb 2026)
+
+### Purchase Prices
+
+| GPU | Unit Price | 8-GPU Server |
+|-----|-----------|--------------|
+| H100 SXM | $35-40K | $350-400K |
+| H100 PCIe | $30-38K | $280-350K |
+| A100 80GB | $8-12K | $100-150K |
+| L40S | $7-9K | $70-90K |
+
+### Cloud Rental (per GPU/hour)
+
+| Provider | H100 | A100 |
+|----------|------|------|
+| AWS/Azure/GCP | $4-5 | $2-3 |
+| Lambda Labs | $2.23 | $1.10 |
+| CoreWeave | $2.25 | $1.50 |
+| Jarvis Labs (India) | $2.99 | $1.50 |
+| Vast.ai | $1.50-2.50 | $0.50-1 |
+
+## Three Business Models
+
+### Model A: Buy GPUs
+
+**8x H100 Server Economics:**
+- CAPEX: $400K
+- OPEX: $160K/year (power, cooling, maintenance)
+- 3-Year TCO: $880K
+
+**Break-even:**
+
+| Utilization | Price/hr | Payback |
+|-------------|----------|---------|
+| 70% | $3.00 | 6.1 years ❌ |
+| 85% | $4.00 | 3.7 years ✓ |
+
+**Verdict:** Only buy if utilization greater than 80% with guaranteed contracts.
+
+### Model B: Lease and Resell (Arbitrage)
+
+- Source: Lambda at $2/hr
+- Sell: India at $3.60/hr (₹300)
+- Margin: 44%
+- Annual profit (8 GPUs, 50% util): ~$42K
+
+**Verdict:** Good for starting. Low risk, learn market.
+
+### Model C: Don't Sell GPUs - Sell Services
+
+| Service | Revenue | Margin |
+|---------|---------|--------|
+| GPU colocation | ₹1-2L/rack/mo | 50-70% |
+| GPU hosting/management | $500-1K/server/mo | 70-80% |
+| India DR for US clients | $2-5K/mo | 70%+ |
+| ML consulting | $200-500/hr | 80%+ |
+
+**Verdict:** Highest margins, lowest risk. Recommended starting point.
+
+## Recommendation
+
+### Phase 1 (Month 1-6): No GPU Purchase
+- Build colocation (₹16L/mo target)
+- GPU arbitrage (₹3-5L/mo margin)
+- US DR services ($5-10K/mo)
+
+### Phase 2 (Month 12-18): Consider Purchase
+Only if:
+- 5+ customers requesting dedicated GPUs
+- Demand greater than 500 GPU-hours/day
+- 6-12 month contracts signed
+- GPUs at 15%+ below market
+
+### Phase 3 (Month 24+): Scale
+- Expand to 32-64 GPUs
+- Mix H100 + A100
+
+## Decision Matrix
+
+Buy GPUs only if ALL true:
+1. ✓ Signed contracts for greater than 80% utilization
+2. ✓ GPUs 15%+ below market price
+3. ✓ 24+ months cash runway
+4. ✓ Cost of capital less than 10%
+
+Otherwise → Use arbitrage model.
+
+## Sources
+
+- [Jarvis Labs H100 Guide](https://docs.jarvislabs.ai/blog/h100-price)
+- [McKinsey: Neoclouds](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-evolution-of-neoclouds-and-their-next-moves)
