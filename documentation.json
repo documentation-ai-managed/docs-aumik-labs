@@ -172,5 +172,7 @@
         ]
       }
     ]
-  }
+  },
+  "template": "atlas",
+  "logo-dark": "https://blob-cdn.documentation.ai/org-b3a37e66-b6db-4d2c-b031-f84b4bb20295/doc-b47e14c6-265d-4748-adf0-ca0ac60dc590/1770385235005-wwzpt4kpzzo-Aumik-Logo.png?q=85&fm=auto&auto=compress%2Cformat"
 }
