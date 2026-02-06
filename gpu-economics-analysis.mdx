@@ -1,6 +1,6 @@
-# GPU Economics & Cost Analysis
-## Buy vs Lease vs Resell Decision Framework
-
+---
+title: "GPU Economics & Cost Analysis"
+description: "Buy vs Lease vs Resell Decision Framework for Data Center GPU Infrastructure"
 ---
 
 ## THE BRUTAL TRUTH ABOUT GPU ECONOMICS
@@ -8,8 +8,6 @@
 **Key Insight:** GPU cloud is a **low-margin, capital-intensive business**. McKinsey reports that after depreciation, labor, and power, GPU cloud providers see only **14-16% gross margins**. This is NOT a get-rich-quick opportunity.
 
 **However:** If you're smart about it, there are profitable paths. Let me show you the math.
-
----
 
 ## PART 1: GPU PRICING (Current Market - Feb 2026)
 
@@ -39,9 +37,7 @@
 | **Vast.ai** | $1.50-2.50 | Spot/auction | $0.50-1.00 | Variable quality |
 | **RunPod** | $2.00-3.00 | - | $0.80-1.20 | Good for bursting |
 
-**Trend:** Prices dropped 60-75% from 2023 peak ($8-10/hr → $2-4/hr)
-
----
+**Trend:** Prices dropped 60-75% from 2023 peak ($8-10/hr to $2-4/hr)
 
 ## PART 2: THE THREE BUSINESS MODELS
 
@@ -49,40 +45,36 @@
 
 **The Math:**
 
-```
-PURCHASE SCENARIO: 8x H100 Server
+**PURCHASE SCENARIO: 8x H100 Server**
 
 Upfront Costs:
-├── 8x H100 SXM GPUs              $320,000
-├── Server + NVLink               $60,000
-├── Networking (100GbE)           $15,000
-├── Rack, PDU, cables             $5,000
-└── TOTAL HARDWARE                $400,000
+- 8x H100 SXM GPUs: $320,000
+- Server + NVLink: $60,000
+- Networking (100GbE): $15,000
+- Rack, PDU, cables: $5,000
+- **TOTAL HARDWARE: $400,000**
 
 Annual Operating Costs:
-├── Power (100kW @ $0.10/kWh)     $87,600
-├── Cooling overhead (30%)         $26,280
-├── Maintenance/repairs            $10,000
-├── Space (colo or own)           $24,000
-├── Internet/networking           $12,000
-└── TOTAL OPEX/YEAR               $160,000
+- Power (100kW @ $0.10/kWh): $87,600
+- Cooling overhead (30%): $26,280
+- Maintenance/repairs: $10,000
+- Space (colo or own): $24,000
+- Internet/networking: $12,000
+- **TOTAL OPEX/YEAR: $160,000**
 
-3-Year TCO: $400K + (3 × $160K) = $880,000
-```
+**3-Year TCO: $400K + (3 × $160K) = $880,000**
 
 **Revenue Potential:**
 
-```
 If you charge $3.00/GPU/hour:
-├── 8 GPUs × $3.00 × 24hr × 30 days = $17,280/month
-├── At 70% utilization: $12,096/month
-├── Annual revenue: $145,152
+- 8 GPUs × $3.00 × 24hr × 30 days = $17,280/month
+- At 70% utilization: $12,096/month
+- Annual revenue: $145,152
 
 If you charge $4.00/GPU/hour:
-├── 8 GPUs × $4.00 × 24hr × 30 days = $23,040/month
-├── At 70% utilization: $16,128/month
-├── Annual revenue: $193,536
-```
+- 8 GPUs × $4.00 × 24hr × 30 days = $23,040/month
+- At 70% utilization: $16,128/month
+- Annual revenue: $193,536
 
 **Break-Even Analysis:**
 
@@ -95,38 +87,34 @@ If you charge $4.00/GPU/hour:
 | 85% | $4.00 | $19,584 | $234,816 | 3.7 years ✓ |
 
 **Verdict on Buying:**
-- ❌ BAD if utilization < 60%
+- ❌ BAD if utilization less than 60%
 - ⚠️ RISKY if utilization 60-75% (new GPUs release in 1-2 years)
-- ✓ OK if utilization > 80% AND you have guaranteed contracts
+- ✓ OK if utilization greater than 80% AND you have guaranteed contracts
 - ✓ GOOD if you get GPUs below market price
-
----
 
 ### Model B: LEASE GPUs and Rent Out (Arbitrage)
 
 **The Math:**
 
-```
-LEASE SCENARIO: Source from Lambda/CoreWeave, sell locally
+**LEASE SCENARIO: Source from Lambda/CoreWeave, sell locally**
 
 Your Cost (sourcing):
-├── Lambda Labs: $2.23/GPU/hr
-├── Volume discount: -10%
-└── Net cost: $2.00/GPU/hr
+- Lambda Labs: $2.23/GPU/hr
+- Volume discount: -10%
+- Net cost: $2.00/GPU/hr
 
 Your Price (selling to India market):
-├── Local rate: ₹300/hr ($3.60)
-├── Your margin: $1.60/GPU/hr (44%)
-└── Monthly margin per GPU: $1,152 (at 24/7)
+- Local rate: ₹300/hr ($3.60)
+- Your margin: $1.60/GPU/hr (44%)
+- Monthly margin per GPU: $1,152 (at 24/7)
 
 Realistic Scenario (8 GPUs, 50% utilization):
-├── Revenue: 8 × $3.60 × 12hr × 30 days = $10,368/month
-├── Cost: 8 × $2.00 × 12hr × 30 days = $5,760/month
-├── Gross profit: $4,608/month
-├── After overhead (support, billing): $3,500/month
+- Revenue: 8 × $3.60 × 12hr × 30 days = $10,368/month
+- Cost: 8 × $2.00 × 12hr × 30 days = $5,760/month
+- Gross profit: $4,608/month
+- After overhead (support, billing): $3,500/month
 
-Annual profit: ~$42,000 per 8-GPU equivalent
-```
+**Annual profit: ~$42,000 per 8-GPU equivalent**
 
 **Pros:**
 - ✓ Zero CAPEX
@@ -146,52 +134,46 @@ Annual profit: ~$42,000 per 8-GPU equivalent
 - ⚠️ Not sustainable long-term unless you add significant value
 - Build customer base → then consider buying
 
----
-
 ### Model C: DON'T SELL GPUs - Sell Everything Else
 
 **The Contrarian Play:**
 
 Instead of competing on GPU pricing (race to bottom), focus on:
 
-```
-HIGH-MARGIN SERVICES AROUND GPUs:
+**HIGH-MARGIN SERVICES AROUND GPUs:**
 
-1. Colocation for GPU servers (customer brings hardware)
-   ├── You provide: power, cooling, security, network
-   ├── Revenue: ₹1-2 lakh/rack/month ($1,200-2,400)
-   ├── Cost: ₹30-50K/rack/month
-   └── Margin: 50-70%
+1. **Colocation for GPU servers** (customer brings hardware)
+   - You provide: power, cooling, security, network
+   - Revenue: ₹1-2 lakh/rack/month ($1,200-2,400)
+   - Cost: ₹30-50K/rack/month
+   - Margin: 50-70%
 
-2. GPU Hosting Services (customer owns GPUs)
-   ├── You provide: monitoring, management, support
-   ├── Revenue: $500-1,000/server/month
-   ├── Cost: $100-200 (labor)
-   └── Margin: 70-80%
+2. **GPU Hosting Services** (customer owns GPUs)
+   - You provide: monitoring, management, support
+   - Revenue: $500-1,000/server/month
+   - Cost: $100-200 (labor)
+   - Margin: 70-80%
 
-3. Data Services (storage, backup, DR)
-   ├── Revenue: $0.10-0.30/GB/month
-   ├── High volume potential
-   └── Margin: 60-70%
+3. **Data Services** (storage, backup, DR)
+   - Revenue: $0.10-0.30/GB/month
+   - High volume potential
+   - Margin: 60-70%
 
-4. Consulting & Setup
-   ├── ML infrastructure setup: $5-20K/project
-   ├── Optimization services: $200-500/hour
-   └── Margin: 80%+
+4. **Consulting & Setup**
+   - ML infrastructure setup: $5-20K/project
+   - Optimization services: $200-500/hour
+   - Margin: 80%+
 
-5. India DR Site for US GPU Customers
-   ├── They run primary in US, backup in India
-   ├── Revenue: $2-5K/month per customer
-   └── Margin: 70%+ (you have the building)
-```
+5. **India DR Site for US GPU Customers**
+   - They run primary in US, backup in India
+   - Revenue: $2-5K/month per customer
+   - Margin: 70%+ (you have the building)
 
 **Why This Works:**
 - GPU prices are commoditizing (race to $2/hr)
 - Services have sticky revenue
 - Higher margins, lower capital requirements
 - Builds long-term customer relationships
-
----
 
 ## PART 3: REALISTIC SCENARIOS FOR YOU
 
@@ -216,8 +198,6 @@ HIGH-MARGIN SERVICES AROUND GPUs:
 | After overhead | $15,000 | $100,000 |
 
 **Verdict:** Low risk, modest returns. Good for learning market.
-
----
 
 ### Scenario 2: Colocation + GPU Reselling (Medium CAPEX)
 
@@ -249,8 +229,6 @@ HIGH-MARGIN SERVICES AROUND GPUs:
 **After loan payments:** ₹20-30 lakh/year
 
 **Verdict:** Moderate returns, builds real asset. Good foundation.
-
----
 
 ### Scenario 3: Buy GPUs (High CAPEX, High Risk)
 
@@ -286,36 +264,32 @@ HIGH-MARGIN SERVICES AROUND GPUs:
 2. Deep pockets to survive 2-3 years of losses
 3. Unique competitive advantage
 
----
-
-## PART 4: MY RECOMMENDATION FOR YOU
+## PART 4: RECOMMENDATION
 
 ### Phase 1: Start Without GPUs (Month 1-6)
 
-```
-FOCUS ON HIGH-MARGIN SERVICES:
+**FOCUS ON HIGH-MARGIN SERVICES:**
 
-1. Colocation (your 100k sqft building)
-   ├── Target: 20 racks @ ₹80K = ₹16 lakh/month
-   └── Investment: ₹2 Cr
+1. **Colocation** (your 100k sqft building)
+   - Target: 20 racks @ ₹80K = ₹16 lakh/month
+   - Investment: ₹2 Cr
 
-2. GPU Arbitrage (parallel)
-   ├── Source from Lambda/Jarvis
-   ├── Sell to local startups
-   └── Target: ₹3-5 lakh/month margin
+2. **GPU Arbitrage** (parallel)
+   - Source from Lambda/Jarvis
+   - Sell to local startups
+   - Target: ₹3-5 lakh/month margin
 
-3. US Partnership (DR services)
-   ├── Resell US colo + India DR
-   └── Target: $5-10K/month
+3. **US Partnership** (DR services)
+   - Resell US colo + India DR
+   - Target: $5-10K/month
 
-TOTAL TARGET: ₹25-30 lakh/month revenue, ₹5-8 lakh profit
-```
+**TOTAL TARGET: ₹25-30 lakh/month revenue, ₹5-8 lakh profit**
 
 ### Phase 2: Consider GPU Purchase (Month 12-18)
 
 **Only if:**
 - ✓ You have 5+ customers requesting dedicated GPUs
-- ✓ Combined demand > 500 GPU-hours/day
+- ✓ Combined demand greater than 500 GPU-hours/day
 - ✓ Customers will sign 6-12 month contracts
 - ✓ You can get GPUs at 15%+ below market
 - ✓ You have cash reserves for 12+ months
@@ -332,8 +306,6 @@ TOTAL TARGET: ₹25-30 lakh/month revenue, ₹5-8 lakh profit
 - Mix of H100 (new customers) and A100 (price-sensitive)
 - Consider NVIDIA Partner Program for preferred pricing
 
----
-
 ## PART 5: GPU COST COMPARISON TABLE
 
 ### Total Cost of Ownership (3-Year)
@@ -341,10 +313,8 @@ TOTAL TARGET: ₹25-30 lakh/month revenue, ₹5-8 lakh profit
 | Approach | Upfront | Year 1 | Year 2 | Year 3 | 3-Yr Total | Risk |
 |----------|---------|--------|--------|--------|------------|------|
 | **Buy 8x H100** | $400K | $160K | $160K | $160K | $880K | HIGH |
-| **Lease from Lambda** | $0 | $140K* | $140K | $140K | $420K | LOW |
+| **Lease from Lambda** | $0 | $140K | $140K | $140K | $420K | LOW |
 | **Don't sell GPU** | $240K | $200K | $150K | $150K | $740K | MEDIUM |
-
-*At 70% utilization equivalent to purchased
 
 ### Revenue Potential (3-Year)
 
@@ -354,9 +324,7 @@ TOTAL TARGET: ₹25-30 lakh/month revenue, ₹5-8 lakh profit
 | **Lease (arbitrage)** | $180K | $220K | $260K | $660K | +$240K ✓ |
 | **Colo + services** | $300K | $400K | $500K | $1.2M | +$460K ✓✓ |
 
----
-
-## PART 6: KEY TAKEAWAYS
+## KEY TAKEAWAYS
 
 ### The Hard Truth
 
@@ -389,42 +357,29 @@ TOTAL TARGET: ₹25-30 lakh/month revenue, ₹5-8 lakh profit
 
 Build your colocation business first, add GPU arbitrage as a service, and only invest in hardware when you have:
 - Proven demand (contracts)
-- High utilization guarantee (>80%)
+- High utilization guarantee (greater than 80%)
 - Cash reserves (24 months)
 - Competitive GPU pricing (NVIDIA partnership)
 
----
+## GPU Decision Matrix
 
-## QUICK REFERENCE: GPU Decision Matrix
+**SHOULD YOU BUY GPUs?**
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                 SHOULD YOU BUY GPUs?                        │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  Do you have signed contracts for >80% utilization?        │
-│  ├── NO → Don't buy. Use arbitrage model.                  │
-│  └── YES ↓                                                 │
-│                                                             │
-│  Can you get GPUs 15%+ below market price?                 │
-│  ├── NO → Don't buy. Margins too thin.                     │
-│  └── YES ↓                                                 │
-│                                                             │
-│  Do you have 24+ months cash runway?                       │
-│  ├── NO → Don't buy. Too risky.                            │
-│  └── YES ↓                                                 │
-│                                                             │
-│  Is your cost of capital < 10%?                            │
-│  ├── NO → Don't buy. Financing costs eat profit.           │
-│  └── YeS ↓                                                 │
-│                                                             │
-│  ✓ Consider buying. Start with 8 GPUs, prove model,        │
-│    then scale.                                             │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+1. Do you have signed contracts for greater than 80% utilization?
+   - NO → Don't buy. Use arbitrage model.
+   - YES → Continue...
 
----
+2. Can you get GPUs 15%+ below market price?
+   - NO → Don't buy. Margins too thin.
+   - YES → Continue...
+
+3. Do you have 24+ months cash runway?
+   - NO → Don't buy. Too risky.
+   - YES → Continue...
+
+4. Is your cost of capital less than 10%?
+   - NO → Don't buy. Financing costs eat profit.
+   - YES → ✓ Consider buying. Start with 8 GPUs, prove model, then scale.
 
 ## Sources
 
@@ -432,7 +387,5 @@ Build your colocation business first, add GPU arbitrage as a service, and only i
 - [GMI Cloud H100 Cost Analysis](https://www.gmicloud.ai/blog/nvidia-h100-gpu-pricing-2025-rent-vs-buy-cost-analysis)
 - [McKinsey: Neoclouds' Challenges](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-evolution-of-neoclouds-and-their-next-moves)
 - [Silicon Data: H100 Rental Prices Over Time](https://www.silicondata.com/blog/h100-rental-price-over-time)
-
----
 
 *Document Created: February 2026*
