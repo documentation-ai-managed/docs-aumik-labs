@@ -23,15 +23,18 @@
                 "pages": [
                   {
                     "title": "Sales Guide",
-                    "path": "sales-guide"
+                    "path": "sales-guide",
+                    "icon": "badge-dollar-sign"
                   },
                   {
                     "title": "MP Data Centers",
-                    "path": "mp-data-centers"
+                    "path": "mp-data-centers",
+                    "icon": "database"
                   },
                   {
                     "title": "Implementation Plan",
-                    "path": "implementation-plan"
+                    "path": "implementation-plan",
+                    "icon": "lucide-plane"
                   },
                   {
                     "title": "GPU Economics",
