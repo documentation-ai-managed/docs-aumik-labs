@@ -22,6 +22,14 @@
                 "group": "Data Center",
                 "pages": [
                   {
+                    "title": "Sales Guide",
+                    "path": "sales-guide"
+                  },
+                  {
+                    "title": "MP Data Centers",
+                    "path": "mp-data-centers"
+                  },
+                  {
                     "title": "Implementation Plan",
                     "path": "implementation-plan"
                   },
